@@ -1,0 +1,243 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: var(--nav-bg);
+  padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-dot {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.text-accent {
+  color: var(--primary-color);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menu-items {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.menu-items a i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.menu-items a:hover i {
+  transform: translateY(-2px);
+}
+
+.menu-number {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-family: 'Fira Code', monospace;
+}
+
+.menu-text {
+  position: relative;
+}
+
+.menu-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.menu-items a:hover .menu-text::after,
+.menu-items a.active .menu-text::after {
+  width: 100%;
+}
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--gradient-primary);
+  color: var(--text-white);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+.resume-btn:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+.resume-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.resume-btn:hover i {
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .resume-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 75%;
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: 6rem 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active .hamburger span:first-child {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .menu-toggle.active .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .hamburger span:last-child {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+} 
