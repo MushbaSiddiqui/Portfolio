@@ -5,14 +5,23 @@ import weatherImg from '../assets/weather-app.png';
 import authImg from '../assets/user-auth.png';
 
 const Projects = () => {
-  const projects = [
+ const projects = [
+    
     {
-      title: "Modern Gym Website",
-      description: "A comprehensive fitness platform with modern UI/UX design, featuring membership management, class scheduling, and trainer profiles.",
-      image: gymImg,
-      technologies: ["React", "CSS3", "JavaScript", "Responsive Design"],
-      github: "https://github.com/MushbaSiddiqui/Gym-frontend",
-      live: "https://gym-frontend-psi.vercel.app/",
+      title: "Food delivery website",
+      description: "We deliver great quality and good qunatity food in affordable price.",
+      image: food,
+      technologies: ["React", "JavaScript", "TailwindCSS", "Responsive Design"],
+      github: "https://github.com/MushbaSiddiqui/FoodFusion",
+      live: "https://food-fusion-gules.vercel.app/",
+    },
+    {
+      title: "Authentication System",
+      description: "Secure user authentication system with JWT implementation, password recovery, and protected routes.",
+      image: authImg,
+      technologies: ["React", "JavaScript", "JWT", "Security"],
+      github: "https://github.com/MushbaSiddiqui/user-uthentication-system",
+      live: "https://user-uthentication-system.vercel.app/",
     },
     {
       title: "Weather Application",
@@ -23,14 +32,15 @@ const Projects = () => {
       live: "https://weather-app-pi-steel-62.vercel.app/",
     },
     {
-      title: "Authentication System",
-      description: "Secure user authentication system with JWT implementation, password recovery, and protected routes.",
-      image: authImg,
-      technologies: ["React", "JavaScript", "JWT", "Security"],
-      github: "https://github.com/MushbaSiddiqui/user-uthentication-system",
-      live: "https://user-uthentication-system.vercel.app/",
-    }
+      title: "Modern Gym Website",
+      description: "A comprehensive fitness platform with modern UI/UX design, featuring membership management, class scheduling, and trainer profiles.",
+      image: gymImg,
+      technologies: ["React", "CSS3", "JavaScript", "Responsive Design"],
+      github: "https://github.com/MushbaSiddiqui/Gym-frontend",
+      live: "https://gym-frontend-psi.vercel.app/",
+    },
   ];
+
 
   return (
     <div className="projects-page" id="projects">
