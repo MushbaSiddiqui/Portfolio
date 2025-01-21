@@ -3,7 +3,7 @@ import './Projects.css';
 import gymImg from '../assets/gym.png';
 import weatherImg from '../assets/weather-app.png';
 import authImg from '../assets/user-auth.png';
-
+import food from '../assets/food-fusion.png';
 const Projects = () => {
  const projects = [
     
